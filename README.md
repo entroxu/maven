@@ -98,7 +98,7 @@ archetype的描述文件是`src/main/resources/META-INF/maven/archetype-metadata
 (因为我们是在完成一个项目原型模板，给别的项目新建的时候使用)
 
 到这里的目录结构如下图：
-![archetype目录结构](.img/archetype目录结构.png)
+![archetype目录结构](.img/archetype-project-structure.png)
 
 #### 1.4 安装自定义的archetype 并且运行archetype插件
 
