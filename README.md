@@ -107,7 +107,35 @@ archetype的描述文件是`src/main/resources/META-INF/maven/archetype-metadata
 mvn install
 ```
 
+好了，到这里就成功创建了archetype,那么如何使用呢？
+
+必须指定`groupId`、`artifactId`和`version`,version如果没有指定会默认为`RELEASE`的版本（没有就报错了）
+```shell
+mvn archetype:generate                                  \
+  -DarchetypeGroupId=<archetype-groupId>                \
+  -DarchetypeArtifactId=<archetype-artifactId>          \
+  -DarchetypeVersion=<archetype-version>                \
+  -DgroupId=<my.groupid>                                \
+  -DartifactId=<my-artifactId>
+```
+
+回到项目目录中，新建一个 cn.tocute.newProject的项目
+即
+```shell
+mvn archetype:generate                                  \
+  -DarchetypeGroupId=cn.tocute                          \
+  -DarchetypeArtifactId=maven                           \
+  -DarchetypeVersion=1.0-SNAPSHOT                       \
+  -DgroupId=cn.tocute                                \
+  -DartifactId=newProject
+```
+可以看到运行成功后，在目录中创建了一个newProject的项目，其项目结构和之前在archetype中定义的一样。
+
+
+检查没有问题后，可以将自己的archetype发布到maven(这就是另一节课程了).
+
+> 注意区分的几个名词 archetype prototype 
+> 其他名词 artifact attribute(属性，这里指xml中tag的属性)
 
 
 
->区分的几个名词 archetype prototype artifact attribute(属性，这里指xml中tag的属性)
